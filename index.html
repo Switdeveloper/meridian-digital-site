@@ -49,8 +49,30 @@
     .testimonial-card:hover { transform: translateY(-4px); }
     .service-card:hover .service-icon { color: #e85d04; }
     .service-card:hover { border-color: #e85d04; }
+    .mobile-menu-open { overflow: hidden; }
+
+    /* Mobile menu animation */
+    #mobile-menu { visibility: hidden; }
+    #mobile-menu .mobile-overlay { opacity: 0; transition: opacity 0.3s ease; }
+    #mobile-menu .mobile-panel { transform: translateX(100%); transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1); }
+    #mobile-menu.active { visibility: visible; }
+    #mobile-menu.active .mobile-overlay { opacity: 1; }
+    #mobile-menu.active .mobile-panel { transform: translateX(0); }
+    #mobile-menu.active .mobile-nav-link { opacity: 1; transform: translateX(0); }
+    .mobile-nav-link { opacity: 0; transform: translateX(20px); transition: opacity 0.3s ease, transform 0.4s cubic-bezier(0.16, 1, 0.3, 1); }
+    #mobile-menu.active .mobile-nav-link:nth-child(1) { transition-delay: 0.08s; }
+    #mobile-menu.active .mobile-nav-link:nth-child(2) { transition-delay: 0.12s; }
+    #mobile-menu.active .mobile-nav-link:nth-child(3) { transition-delay: 0.16s; }
+    #mobile-menu.active .mobile-nav-link:nth-child(4) { transition-delay: 0.20s; }
+    #mobile-menu.active .mobile-nav-link:nth-child(5) { transition-delay: 0.24s; }
+    #mobile-menu.active .mobile-nav-link:nth-child(6) { transition-delay: 0.28s; }
+    #mobile-menu.active .mobile-nav-link:nth-child(7) { transition-delay: 0.32s; }
+
     @media (prefers-reduced-motion: reduce) {
       .fade-in { opacity: 1; transform: none; transition: none; }
+      #mobile-menu .mobile-overlay { transition: none; }
+      #mobile-menu .mobile-panel { transition: none; }
+      .mobile-nav-link { transition: none; }
     }
   </style>
 </head>
@@ -71,24 +93,68 @@
           <a href="#testimonials" class="text-sm text-white/70 hover:text-white transition-colors duration-200">Testimonials</a>
           <a href="#contact" class="ml-4 px-6 py-2.5 bg-ember-500 text-white text-sm font-medium hover:bg-ember-600 transition-colors duration-200 cursor-pointer">Get in Touch</a>
         </div>
-        <button id="mobile-toggle" class="md:hidden text-white cursor-pointer" aria-label="Toggle menu">
-          <svg class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5">
+        <button id="mobile-toggle" class="md:hidden text-white cursor-pointer w-11 h-11 flex items-center justify-center" aria-label="Toggle menu">
+          <svg id="icon-open" class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5">
             <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 9h16.5m-16.5 6.75h16.5"/>
+          </svg>
+          <svg id="icon-close" class="w-6 h-6 hidden" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12"/>
           </svg>
         </button>
       </div>
     </div>
-    <!-- Mobile Menu -->
-    <div id="mobile-menu" class="hidden md:hidden bg-navy-900 border-t border-white/10">
-      <div class="px-6 py-6 space-y-4">
-        <a href="#services" class="block text-white/70 hover:text-white transition-colors">Services</a>
-        <a href="#work" class="block text-white/70 hover:text-white transition-colors">Work</a>
-        <a href="#about" class="block text-white/70 hover:text-white transition-colors">About</a>
-        <a href="#testimonials" class="block text-white/70 hover:text-white transition-colors">Testimonials</a>
-        <a href="#contact" class="block text-ember-500 font-medium">Get in Touch</a>
+  </nav>
+
+  <!-- Mobile Menu Overlay -->
+  <div id="mobile-menu">
+    <div class="mobile-overlay fixed inset-0 bg-navy-900/90 backdrop-blur-sm z-50"></div>
+    <div class="mobile-panel fixed inset-y-0 right-0 w-full max-w-sm bg-navy-900 z-50 border-l border-white/5 flex flex-col">
+      <!-- Close button at top -->
+      <div class="flex items-center justify-between px-6 h-20 border-b border-white/5">
+        <a href="#" class="flex items-center gap-3">
+          <div class="w-8 h-8 bg-ember-500 rounded-sm"></div>
+          <span class="text-white font-display text-xl tracking-wide">Meridian</span>
+        </a>
+        <button id="mobile-close" class="text-white/60 hover:text-white w-11 h-11 flex items-center justify-center cursor-pointer" aria-label="Close menu">
+          <svg class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12"/>
+          </svg>
+        </button>
+      </div>
+      <!-- Navigation links -->
+      <nav class="flex-1 overflow-y-auto px-6 py-8">
+        <div class="flex flex-col">
+          <a href="#services" class="mobile-nav-link py-4 border-b border-white/5 text-lg text-white/80 hover:text-white transition-colors cursor-pointer">
+            <span class="text-white/30 text-sm mr-3">01</span>Services
+          </a>
+          <a href="#work" class="mobile-nav-link py-4 border-b border-white/5 text-lg text-white/80 hover:text-white transition-colors cursor-pointer">
+            <span class="text-white/30 text-sm mr-3">02</span>Case Studies
+          </a>
+          <a href="#about" class="mobile-nav-link py-4 border-b border-white/5 text-lg text-white/80 hover:text-white transition-colors cursor-pointer">
+            <span class="text-white/30 text-sm mr-3">03</span>About
+          </a>
+          <a href="#testimonials" class="mobile-nav-link py-4 border-b border-white/5 text-lg text-white/80 hover:text-white transition-colors cursor-pointer">
+            <span class="text-white/30 text-sm mr-3">04</span>Testimonials
+          </a>
+          <a href="#contact" class="mobile-nav-link py-4 border-b border-white/5 text-lg text-white/80 hover:text-white transition-colors cursor-pointer">
+            <span class="text-white/30 text-sm mr-3">05</span>Contact
+          </a>
+        </div>
+      </nav>
+      <!-- CTA section -->
+      <div class="px-6 py-8 border-t border-white/5">
+        <a href="#contact" class="mobile-nav-link flex items-center justify-center w-full px-6 py-4 bg-ember-500 text-white font-medium text-base hover:bg-ember-600 transition-colors duration-200 cursor-pointer">
+          Start a Project
+        </a>
+        <div class="mobile-nav-link flex items-center gap-3 mt-6">
+          <a href="mailto:hello@meridiandigital.com" class="text-white/40 text-sm hover:text-white transition-colors cursor-pointer">hello@meridiandigital.com</a>
+        </div>
+        <div class="mobile-nav-link flex items-center gap-3 mt-3">
+          <span class="text-white/40 text-sm">+1 (555) 234-5678</span>
+        </div>
       </div>
     </div>
-  </nav>
+  </div>
 
   <!-- Hero -->
   <section class="relative min-h-screen flex items-center bg-navy-900 overflow-hidden">
@@ -619,14 +685,40 @@
       }
     });
 
-    // Mobile menu toggle
+    // Mobile menu
     const mobileToggle = document.getElementById('mobile-toggle');
     const mobileMenu = document.getElementById('mobile-menu');
-    mobileToggle.addEventListener('click', () => {
-      mobileMenu.classList.toggle('hidden');
-    });
+    const mobileClose = document.getElementById('mobile-close');
+    const mobileOverlay = mobileMenu.querySelector('.mobile-overlay');
+    const iconOpen = document.getElementById('icon-open');
+    const iconClose = document.getElementById('icon-close');
+
+    function openMenu() {
+      mobileMenu.classList.add('active');
+      document.body.classList.add('mobile-menu-open');
+      iconOpen.classList.add('hidden');
+      iconClose.classList.remove('hidden');
+    }
+
+    function closeMenu() {
+      mobileMenu.classList.remove('active');
+      document.body.classList.remove('mobile-menu-open');
+      iconOpen.classList.remove('hidden');
+      iconClose.classList.add('hidden');
+    }
+
+    mobileToggle.addEventListener('click', openMenu);
+    mobileClose.addEventListener('click', closeMenu);
+    mobileOverlay.addEventListener('click', closeMenu);
     mobileMenu.querySelectorAll('a').forEach(link => {
-      link.addEventListener('click', () => mobileMenu.classList.add('hidden'));
+      link.addEventListener('click', closeMenu);
+    });
+
+    // Close on Escape key
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape' && mobileMenu.classList.contains('active')) {
+        closeMenu();
+      }
     });
 
     // Scroll reveal
