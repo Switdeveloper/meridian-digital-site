@@ -8,73 +8,25 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
   <script>
     tailwind.config = {
       theme: {
         extend: {
           colors: {
-            navy: {
-              900: '#0a1628',
-              800: '#0f1f3d',
-              700: '#152952',
-              600: '#1a3468',
-            },
-            ember: {
-              500: '#e85d04',
-              600: '#d45003',
-              700: '#bf4403',
-            },
-            cream: {
-              50: '#fefcf8',
-              100: '#fdf8ef',
-              200: '#f5ecd7',
-            },
-            stone: {
-              550: '#6b6560',
-            }
+            navy: { 900: '#0a1628', 800: '#0f1f3d', 700: '#152952', 600: '#1a3468' },
+            ember: { 500: '#e85d04', 600: '#d45003', 700: '#bf4403' },
+            cream: { 50: '#fefcf8', 100: '#fdf8ef', 200: '#f5ecd7' },
+            stone: { 550: '#6b6560' }
           },
           fontFamily: {
             display: ['Playfair Display', 'Georgia', 'serif'],
             body: ['Inter', 'system-ui', 'sans-serif'],
-          },
+          }
         }
       }
     }
   </script>
-  <style>
-    html { scroll-behavior: smooth; }
-    .nav-scrolled { background: rgba(10, 22, 40, 0.97); backdrop-filter: blur(8px); box-shadow: 0 1px 0 rgba(255,255,255,0.05); }
-    .fade-in { opacity: 0; transform: translateY(20px); transition: opacity 0.6s ease-out, transform 0.6s ease-out; }
-    .fade-in.visible { opacity: 1; transform: translateY(0); }
-    .testimonial-card:hover { transform: translateY(-4px); }
-    .service-card:hover .service-icon { color: #e85d04; }
-    .service-card:hover { border-color: #e85d04; }
-    .mobile-menu-open { overflow: hidden; }
-
-    /* Mobile menu animation */
-    #mobile-menu { visibility: hidden; }
-    #mobile-menu .mobile-overlay { opacity: 0; transition: opacity 0.3s ease; }
-    #mobile-menu .mobile-panel { transform: translateX(100%); transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1); }
-    #mobile-menu.active { visibility: visible; }
-    #mobile-menu.active .mobile-overlay { opacity: 1; }
-    #mobile-menu.active .mobile-panel { transform: translateX(0); }
-    #mobile-menu.active .mobile-nav-link { opacity: 1; transform: translateX(0); }
-    .mobile-nav-link { opacity: 0; transform: translateX(20px); transition: opacity 0.3s ease, transform 0.4s cubic-bezier(0.16, 1, 0.3, 1); }
-    #mobile-menu.active .mobile-nav-link:nth-child(1) { transition-delay: 0.08s; }
-    #mobile-menu.active .mobile-nav-link:nth-child(2) { transition-delay: 0.12s; }
-    #mobile-menu.active .mobile-nav-link:nth-child(3) { transition-delay: 0.16s; }
-    #mobile-menu.active .mobile-nav-link:nth-child(4) { transition-delay: 0.20s; }
-    #mobile-menu.active .mobile-nav-link:nth-child(5) { transition-delay: 0.24s; }
-    #mobile-menu.active .mobile-nav-link:nth-child(6) { transition-delay: 0.28s; }
-    #mobile-menu.active .mobile-nav-link:nth-child(7) { transition-delay: 0.32s; }
-
-    @media (prefers-reduced-motion: reduce) {
-      .fade-in { opacity: 1; transform: none; transition: none; }
-      #mobile-menu .mobile-overlay { transition: none; }
-      #mobile-menu .mobile-panel { transition: none; }
-      .mobile-nav-link { transition: none; }
-    }
-  </style>
 </head>
 <body class="bg-cream-50 font-body text-navy-900 antialiased">
 
@@ -82,325 +34,175 @@
   <nav id="navbar" class="fixed top-0 left-0 right-0 z-50 transition-all duration-300 bg-navy-900">
     <div class="max-w-7xl mx-auto px-6 lg:px-8">
       <div class="flex items-center justify-between h-20">
-        <a href="#" class="flex items-center gap-3">
+        <a href="index.html" class="flex items-center gap-3">
           <div class="w-8 h-8 bg-ember-500 rounded-sm"></div>
           <span class="text-white font-display text-xl tracking-wide">Meridian</span>
         </a>
-        <div class="hidden md:flex items-center gap-10">
-          <a href="#services" class="text-sm text-white/70 hover:text-white transition-colors duration-200">Services</a>
-          <a href="#work" class="text-sm text-white/70 hover:text-white transition-colors duration-200">Work</a>
-          <a href="#about" class="text-sm text-white/70 hover:text-white transition-colors duration-200">About</a>
-          <a href="#testimonials" class="text-sm text-white/70 hover:text-white transition-colors duration-200">Testimonials</a>
-          <a href="#contact" class="ml-4 px-6 py-2.5 bg-ember-500 text-white text-sm font-medium hover:bg-ember-600 transition-colors duration-200 cursor-pointer">Get in Touch</a>
+        <div class="hidden md:flex items-center gap-8">
+          <a href="index.html" class="text-sm text-white font-medium hover:text-white transition-colors">Home</a>
+          <a href="about.html" class="text-sm text-white/70 hover:text-white transition-colors">About</a>
+          <a href="services.html" class="text-sm text-white/70 hover:text-white transition-colors">Services</a>
+          <a href="portfolio.html" class="text-sm text-white/70 hover:text-white transition-colors">Work</a>
+          <a href="insights.html" class="text-sm text-white/70 hover:text-white transition-colors">Insights</a>
+          <a href="contact.html" class="ml-4 px-6 py-2.5 bg-ember-500 text-white text-sm font-medium hover:bg-ember-600 transition-colors duration-200 cursor-pointer">Contact</a>
         </div>
         <button id="mobile-toggle" class="md:hidden text-white cursor-pointer w-11 h-11 flex items-center justify-center" aria-label="Toggle menu">
-          <svg id="icon-open" class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5">
-            <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 9h16.5m-16.5 6.75h16.5"/>
-          </svg>
-          <svg id="icon-close" class="w-6 h-6 hidden" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5">
-            <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12"/>
-          </svg>
+          <svg id="icon-open" class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5"><path stroke-linecap="round" stroke-linejoin="round" d="M3.75 9h16.5m-16.5 6.75h16.5"/></svg>
+          <svg id="icon-close" class="w-6 h-6 hidden" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5"><path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12"/></svg>
         </button>
       </div>
     </div>
   </nav>
 
-  <!-- Mobile Menu Overlay -->
+  <!-- Mobile Menu -->
   <div id="mobile-menu">
     <div class="mobile-overlay fixed inset-0 bg-navy-900/90 backdrop-blur-sm z-50"></div>
     <div class="mobile-panel fixed inset-y-0 right-0 w-full max-w-sm bg-navy-900 z-50 border-l border-white/5 flex flex-col">
-      <!-- Close button at top -->
       <div class="flex items-center justify-between px-6 h-20 border-b border-white/5">
-        <a href="#" class="flex items-center gap-3">
-          <div class="w-8 h-8 bg-ember-500 rounded-sm"></div>
-          <span class="text-white font-display text-xl tracking-wide">Meridian</span>
-        </a>
+        <a href="index.html" class="flex items-center gap-3"><div class="w-8 h-8 bg-ember-500 rounded-sm"></div><span class="text-white font-display text-xl tracking-wide">Meridian</span></a>
         <button id="mobile-close" class="text-white/60 hover:text-white w-11 h-11 flex items-center justify-center cursor-pointer" aria-label="Close menu">
-          <svg class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5">
-            <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12"/>
-          </svg>
+          <svg class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5"><path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12"/></svg>
         </button>
       </div>
-      <!-- Navigation links -->
       <nav class="flex-1 overflow-y-auto px-6 py-8">
         <div class="flex flex-col">
-          <a href="#services" class="mobile-nav-link py-4 border-b border-white/5 text-lg text-white/80 hover:text-white transition-colors cursor-pointer">
-            <span class="text-white/30 text-sm mr-3">01</span>Services
-          </a>
-          <a href="#work" class="mobile-nav-link py-4 border-b border-white/5 text-lg text-white/80 hover:text-white transition-colors cursor-pointer">
-            <span class="text-white/30 text-sm mr-3">02</span>Case Studies
-          </a>
-          <a href="#about" class="mobile-nav-link py-4 border-b border-white/5 text-lg text-white/80 hover:text-white transition-colors cursor-pointer">
-            <span class="text-white/30 text-sm mr-3">03</span>About
-          </a>
-          <a href="#testimonials" class="mobile-nav-link py-4 border-b border-white/5 text-lg text-white/80 hover:text-white transition-colors cursor-pointer">
-            <span class="text-white/30 text-sm mr-3">04</span>Testimonials
-          </a>
-          <a href="#contact" class="mobile-nav-link py-4 border-b border-white/5 text-lg text-white/80 hover:text-white transition-colors cursor-pointer">
-            <span class="text-white/30 text-sm mr-3">05</span>Contact
-          </a>
+          <a href="index.html" class="mobile-nav-link py-4 border-b border-white/5 text-lg text-white transition-colors cursor-pointer"><span class="text-white/30 text-sm mr-3">01</span>Home</a>
+          <a href="about.html" class="mobile-nav-link py-4 border-b border-white/5 text-lg text-white/80 hover:text-white transition-colors cursor-pointer"><span class="text-white/30 text-sm mr-3">02</span>About</a>
+          <a href="services.html" class="mobile-nav-link py-4 border-b border-white/5 text-lg text-white/80 hover:text-white transition-colors cursor-pointer"><span class="text-white/30 text-sm mr-3">03</span>Services</a>
+          <a href="portfolio.html" class="mobile-nav-link py-4 border-b border-white/5 text-lg text-white/80 hover:text-white transition-colors cursor-pointer"><span class="text-white/30 text-sm mr-3">04</span>Work</a>
+          <a href="insights.html" class="mobile-nav-link py-4 border-b border-white/5 text-lg text-white/80 hover:text-white transition-colors cursor-pointer"><span class="text-white/30 text-sm mr-3">05</span>Insights</a>
+          <a href="contact.html" class="mobile-nav-link py-4 border-b border-white/5 text-lg text-white/80 hover:text-white transition-colors cursor-pointer"><span class="text-white/30 text-sm mr-3">06</span>Contact</a>
         </div>
       </nav>
-      <!-- CTA section -->
       <div class="px-6 py-8 border-t border-white/5">
-        <a href="#contact" class="mobile-nav-link flex items-center justify-center w-full px-6 py-4 bg-ember-500 text-white font-medium text-base hover:bg-ember-600 transition-colors duration-200 cursor-pointer">
-          Start a Project
-        </a>
-        <div class="mobile-nav-link flex items-center gap-3 mt-6">
-          <a href="mailto:hello@meridiandigital.com" class="text-white/40 text-sm hover:text-white transition-colors cursor-pointer">hello@meridiandigital.com</a>
-        </div>
-        <div class="mobile-nav-link flex items-center gap-3 mt-3">
-          <span class="text-white/40 text-sm">+1 (555) 234-5678</span>
-        </div>
+        <a href="contact.html" class="mobile-nav-link flex items-center justify-center w-full px-6 py-4 bg-ember-500 text-white font-medium text-base hover:bg-ember-600 transition-colors duration-200 cursor-pointer">Start a Project</a>
+        <div class="mobile-nav-link mt-4"><a href="mailto:hello@meridiandigital.com" class="text-white/40 text-sm hover:text-white transition-colors">hello@meridiandigital.com</a></div>
       </div>
     </div>
   </div>
 
   <!-- Hero -->
-  <section class="relative min-h-screen flex items-center bg-navy-900 overflow-hidden">
+  <section class="relative min-h-screen flex items-center overflow-hidden">
     <div class="absolute inset-0">
-      <div class="absolute top-1/4 right-0 w-[600px] h-[600px] bg-ember-500/5 rounded-full blur-3xl"></div>
-      <div class="absolute bottom-0 left-0 w-[400px] h-[400px] bg-navy-700/50 rounded-full blur-3xl"></div>
+      <img src="https://images.unsplash.com/photo-1521737711867-e720b3e7e3e4?auto=format&fit=crop&w=1920&q=80" alt="Team collaborating on marketing strategy" class="w-full h-full object-cover">
+      <div class="absolute inset-0 bg-navy-900/85"></div>
     </div>
     <div class="relative max-w-7xl mx-auto px-6 lg:px-8 py-32 lg:py-40">
       <div class="max-w-3xl">
-        <p class="text-ember-500 text-sm font-medium tracking-widest uppercase mb-8">Digital Marketing Agency</p>
-        <h1 class="font-display text-5xl md:text-6xl lg:text-7xl text-white leading-[1.1] mb-8">
-          We build campaigns<br>
-          <span class="text-white/50">that actually</span> convert.
+        <p class="text-ember-500 text-sm font-medium tracking-widest uppercase mb-8 fade-in">Digital Marketing Agency</p>
+        <h1 class="font-display text-5xl md:text-6xl lg:text-7xl text-white leading-[1.1] mb-8 fade-in">
+          We build campaigns<br><span class="text-white/50">that actually</span> convert.
         </h1>
-        <p class="text-lg md:text-xl text-white/60 leading-relaxed max-w-xl mb-12">
+        <p class="text-lg md:text-xl text-white/60 leading-relaxed max-w-xl mb-12 fade-in">
           No vanity metrics. No bloated reports. Just measurable growth through SEO, paid media, and content that earns trust.
         </p>
-        <div class="flex flex-col sm:flex-row gap-4">
-          <a href="#contact" class="inline-flex items-center justify-center px-8 py-4 bg-ember-500 text-white font-medium hover:bg-ember-600 transition-colors duration-200 cursor-pointer">
+        <div class="flex flex-col sm:flex-row gap-4 fade-in">
+          <a href="contact.html" class="inline-flex items-center justify-center px-8 py-4 bg-ember-500 text-white font-medium hover:bg-ember-600 transition-colors duration-200 cursor-pointer">
             Start a Project
             <svg class="w-4 h-4 ml-2" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M17.25 8.25L21 12m0 0l-3.75 3.75M2.25 12h18"/></svg>
           </a>
-          <a href="#work" class="inline-flex items-center justify-center px-8 py-4 border border-white/20 text-white font-medium hover:border-white/40 hover:bg-white/5 transition-all duration-200 cursor-pointer">
-            View Our Work
-          </a>
+          <a href="portfolio.html" class="inline-flex items-center justify-center px-8 py-4 border border-white/20 text-white font-medium hover:border-white/40 hover:bg-white/5 transition-all duration-200 cursor-pointer">View Our Work</a>
         </div>
       </div>
-      <div class="mt-20 pt-12 border-t border-white/10 grid grid-cols-2 md:grid-cols-4 gap-8 md:gap-12">
-        <div>
-          <p class="font-display text-3xl md:text-4xl text-white">340%</p>
-          <p class="text-sm text-white/50 mt-1">Avg. ROI increase</p>
-        </div>
-        <div>
-          <p class="font-display text-3xl md:text-4xl text-white">12M+</p>
-          <p class="text-sm text-white/50 mt-1">Ad spend managed</p>
-        </div>
-        <div>
-          <p class="font-display text-3xl md:text-4xl text-white">150+</p>
-          <p class="text-sm text-white/50 mt-1">Clients served</p>
-        </div>
-        <div>
-          <p class="font-display text-3xl md:text-4xl text-white">8yr</p>
-          <p class="text-sm text-white/50 mt-1">In business</p>
-        </div>
+      <div class="mt-20 pt-12 border-t border-white/10 grid grid-cols-2 md:grid-cols-4 gap-8 md:gap-12 fade-in">
+        <div><p class="font-display text-3xl md:text-4xl text-white">340%</p><p class="text-sm text-white/50 mt-1">Avg. ROI increase</p></div>
+        <div><p class="font-display text-3xl md:text-4xl text-white">12M+</p><p class="text-sm text-white/50 mt-1">Ad spend managed</p></div>
+        <div><p class="font-display text-3xl md:text-4xl text-white">150+</p><p class="text-sm text-white/50 mt-1">Clients served</p></div>
+        <div><p class="font-display text-3xl md:text-4xl text-white">8yr</p><p class="text-sm text-white/50 mt-1">In business</p></div>
       </div>
     </div>
   </section>
 
-  <!-- Problem / Statement -->
+  <!-- Statement -->
   <section class="py-24 lg:py-32 bg-cream-50">
     <div class="max-w-7xl mx-auto px-6 lg:px-8">
       <div class="max-w-3xl mx-auto text-center fade-in">
+        <div class="section-divider mx-auto"></div>
         <h2 class="font-display text-3xl md:text-4xl lg:text-5xl text-navy-900 leading-tight mb-8">
-          Most agencies sell you activity.<br>
-          <span class="text-stone-550 italic">We sell results.</span>
+          Most agencies sell you activity.<br><span class="text-stone-550 italic">We sell results.</span>
         </h2>
         <p class="text-lg text-stone-550 leading-relaxed">
-          The digital marketing industry is full of agencies that report on impressions and clicks while your revenue stays flat. We do things differently — every campaign is tied to a business outcome you actually care about.
+          The digital marketing industry is full of agencies that report on impressions and clicks while your revenue stays flat. We tie every campaign to a business outcome you actually care about.
         </p>
       </div>
     </div>
   </section>
 
-  <!-- Services -->
-  <section id="services" class="py-24 lg:py-32 bg-white">
+  <!-- Featured Services -->
+  <section class="py-24 lg:py-32 bg-white">
     <div class="max-w-7xl mx-auto px-6 lg:px-8">
       <div class="max-w-2xl mb-16 fade-in">
         <p class="text-ember-500 text-sm font-medium tracking-widest uppercase mb-4">What We Do</p>
-        <h2 class="font-display text-3xl md:text-4xl text-navy-900 leading-tight">
-          Full-service digital marketing, built on data.
-        </h2>
+        <h2 class="font-display text-3xl md:text-4xl text-navy-900 leading-tight">Full-service digital marketing, built on data.</h2>
       </div>
-      <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-        <!-- SEO -->
-        <div class="service-card group p-8 border border-gray-200 hover:border-ember-500 transition-colors duration-300 fade-in">
-          <div class="service-icon w-12 h-12 mb-6 text-navy-900 transition-colors duration-300">
-            <svg fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5"><path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-5.197-5.197m0 0A7.5 7.5 0 105.196 5.196a7.5 7.5 0 0010.607 10.607z"/></svg>
+      <div class="grid md:grid-cols-3 gap-8">
+        <a href="services.html#seo" class="group fade-in block">
+          <div class="img-zoom aspect-[4/3] mb-6 overflow-hidden rounded-sm">
+            <img src="https://images.unsplash.com/photo-1571171637578-41bc2dd41cd2?auto=format&fit=crop&w=800&q=80" alt="SEO analytics on screen" class="w-full h-full object-cover">
           </div>
-          <h3 class="font-display text-xl text-navy-900 mb-3">Search Engine Optimization</h3>
-          <p class="text-stone-550 leading-relaxed text-sm">
-            Technical audits, content strategy, and link building that drives organic traffic that actually converts.
-          </p>
-        </div>
-        <!-- Paid Media -->
-        <div class="service-card group p-8 border border-gray-200 hover:border-ember-500 transition-colors duration-300 fade-in">
-          <div class="service-icon w-12 h-12 mb-6 text-navy-900 transition-colors duration-300">
-            <svg fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5"><path stroke-linecap="round" stroke-linejoin="round" d="M3.75 3v11.25A2.25 2.25 0 006 16.5h2.25M3.75 3h-1.5m1.5 0h16.5m0 0h1.5m-1.5 0v11.25A2.25 2.25 0 0118 16.5h-2.25m-7.5 0h7.5m-7.5 0l-1 3m8.5-3l1 3m0 0l.5 1.5m-.5-1.5h-9.5m0 0l-.5 1.5"/></svg>
+          <p class="text-ember-500 text-xs font-medium tracking-widest uppercase mb-2">Search</p>
+          <h3 class="font-display text-xl text-navy-900 mb-2 group-hover:text-ember-500 transition-colors">Search Engine Optimization</h3>
+          <p class="text-stone-550 text-sm leading-relaxed">Technical audits, content strategy, and link building that drives organic traffic that actually converts.</p>
+        </a>
+        <a href="services.html#paid-media" class="group fade-in block">
+          <div class="img-zoom aspect-[4/3] mb-6 overflow-hidden rounded-sm">
+            <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=800&q=80" alt="Analytics dashboard" class="w-full h-full object-cover">
           </div>
-          <h3 class="font-display text-xl text-navy-900 mb-3">Paid Media & PPC</h3>
-          <p class="text-stone-550 leading-relaxed text-sm">
-            Google Ads, Meta, LinkedIn — we manage six-figure budgets with obsessive attention to cost per acquisition.
-          </p>
-        </div>
-        <!-- Content -->
-        <div class="service-card group p-8 border border-gray-200 hover:border-ember-500 transition-colors duration-300 fade-in">
-          <div class="service-icon w-12 h-12 mb-6 text-navy-900 transition-colors duration-300">
-            <svg fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5"><path stroke-linecap="round" stroke-linejoin="round" d="M12 7.5h1.5m-1.5 3h1.5m-7.5 3h7.5m-7.5 3h7.5m3-9h3.375c.621 0 1.125.504 1.125 1.125V18a2.25 2.25 0 01-2.25 2.25M10.5 7.5v-1.5m6 1.5v-1.5m0 0h1.5m-1.5 0h1.5v1.5"/></svg>
+          <p class="text-ember-500 text-xs font-medium tracking-widest uppercase mb-2">Advertising</p>
+          <h3 class="font-display text-xl text-navy-900 mb-2 group-hover:text-ember-500 transition-colors">Paid Media & PPC</h3>
+          <p class="text-stone-550 text-sm leading-relaxed">Google Ads, Meta, LinkedIn — we manage six-figure budgets with obsessive attention to cost per acquisition.</p>
+        </a>
+        <a href="services.html#content" class="group fade-in block">
+          <div class="img-zoom aspect-[4/3] mb-6 overflow-hidden rounded-sm">
+            <img src="https://images.unsplash.com/photo-1455390582262-044cdead277a?auto=format&fit=crop&w=800&q=80" alt="Content writing workspace" class="w-full h-full object-cover">
           </div>
-          <h3 class="font-display text-xl text-navy-900 mb-3">Content Strategy</h3>
-          <p class="text-stone-550 leading-relaxed text-sm">
-            Editorial calendars, thought leadership, and SEO-driven content that positions you as the authority in your space.
-          </p>
-        </div>
-        <!-- Social -->
-        <div class="service-card group p-8 border border-gray-200 hover:border-ember-500 transition-colors duration-300 fade-in">
-          <div class="service-icon w-12 h-12 mb-6 text-navy-900 transition-colors duration-300">
-            <svg fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5"><path stroke-linecap="round" stroke-linejoin="round" d="M18 18.72a9.094 9.094 0 003.741-.479 3 3 0 00-4.682-2.72m.94 3.198l.001.031c0 .225-.012.447-.037.666A11.944 11.944 0 0112 21c-2.17 0-4.207-.576-5.963-1.584A6.062 6.062 0 016 18.719m12 0a5.971 5.971 0 00-.941-3.197m0 0A5.995 5.995 0 0012 12.75a5.995 5.995 0 00-5.058 2.772m0 0a3 3 0 00-4.681 2.72 8.986 8.986 0 003.74.477m.94-3.197a5.971 5.971 0 00-.94 3.197M15 6.75a3 3 0 11-6 0 3 3 0 016 0zm6 3a2.25 2.25 0 11-4.5 0 2.25 2.25 0 014.5 0zm-13.5 0a2.25 2.25 0 11-4.5 0 2.25 2.25 0 014.5 0z"/></svg>
-          </div>
-          <h3 class="font-display text-xl text-navy-900 mb-3">Social Media</h3>
-          <p class="text-stone-550 leading-relaxed text-sm">
-            Community building and social strategy that turns followers into customers, not just engagement numbers.
-          </p>
-        </div>
-        <!-- Email -->
-        <div class="service-card group p-8 border border-gray-200 hover:border-ember-500 transition-colors duration-300 fade-in">
-          <div class="service-icon w-12 h-12 mb-6 text-navy-900 transition-colors duration-300">
-            <svg fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5"><path stroke-linecap="round" stroke-linejoin="round" d="M21.75 6.75v10.5a2.25 2.25 0 01-2.25 2.25h-15a2.25 2.25 0 01-2.25-2.25V6.75m19.5 0A2.25 2.25 0 0019.5 4.5h-15a2.25 2.25 0 00-2.25 2.25m19.5 0v.243a2.25 2.25 0 01-1.07 1.916l-7.5 4.615a2.25 2.25 0 01-2.36 0L3.32 8.91a2.25 2.25 0 01-1.07-1.916V6.75"/></svg>
-          </div>
-          <h3 class="font-display text-xl text-navy-900 mb-3">Email Marketing</h3>
-          <p class="text-stone-550 leading-relaxed text-sm">
-            Automated flows, newsletters, and campaigns that nurture leads and drive repeat purchases at scale.
-          </p>
-        </div>
-        <!-- Analytics -->
-        <div class="service-card group p-8 border border-gray-200 hover:border-ember-500 transition-colors duration-300 fade-in">
-          <div class="service-icon w-12 h-12 mb-6 text-navy-900 transition-colors duration-300">
-            <svg fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5"><path stroke-linecap="round" stroke-linejoin="round" d="M3 13.125C3 12.504 3.504 12 4.125 12h2.25c.621 0 1.125.504 1.125 1.125v6.75C7.5 20.496 6.996 21 6.375 21h-2.25A1.125 1.125 0 013 19.875v-6.75zM9.75 8.625c0-.621.504-1.125 1.125-1.125h2.25c.621 0 1.125.504 1.125 1.125v11.25c0 .621-.504 1.125-1.125 1.125h-2.25a1.125 1.125 0 01-1.125-1.125V8.625zM16.5 4.125c0-.621.504-1.125 1.125-1.125h2.25C20.496 3 21 3.504 21 4.125v15.75c0 .621-.504 1.125-1.125 1.125h-2.25a1.125 1.125 0 01-1.125-1.125V4.125z"/></svg>
-          </div>
-          <h3 class="font-display text-xl text-navy-900 mb-3">Analytics & Reporting</h3>
-          <p class="text-stone-550 leading-relaxed text-sm">
-            Custom dashboards and attribution models that show you exactly where every dollar is going and what it's returning.
-          </p>
-        </div>
+          <p class="text-ember-500 text-xs font-medium tracking-widest uppercase mb-2">Editorial</p>
+          <h3 class="font-display text-xl text-navy-900 mb-2 group-hover:text-ember-500 transition-colors">Content Strategy</h3>
+          <p class="text-stone-550 text-sm leading-relaxed">Editorial calendars, thought leadership, and SEO-driven content that positions you as the authority.</p>
+        </a>
       </div>
+      <div class="mt-12 fade-in"><a href="services.html" class="text-ember-500 font-medium hover:text-ember-600 transition-colors inline-flex items-center gap-2 cursor-pointer">View all services <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M17.25 8.25L21 12m0 0l-3.75 3.75M2.25 12h18"/></svg></a></div>
     </div>
   </section>
 
-  <!-- Case Studies / Work -->
-  <section id="work" class="py-24 lg:py-32 bg-cream-100">
+  <!-- Full-width image section with quote -->
+  <section class="relative py-32 lg:py-40 overflow-hidden">
+    <div class="absolute inset-0">
+      <img src="https://images.unsplash.com/photo-1497366216548-37d359e9c87c?auto=format&fit=crop&w=1920&q=80" alt="Modern office interior" class="w-full h-full object-cover">
+      <div class="absolute inset-0 bg-navy-900/80"></div>
+    </div>
+    <div class="relative max-w-4xl mx-auto px-6 lg:px-8 text-center fade-in">
+      <div class="section-divider mx-auto bg-white/30"></div>
+      <blockquote class="font-display text-3xl md:text-4xl lg:text-5xl text-white leading-tight italic mb-8">
+        "The best marketing doesn't feel like marketing. It feels like the answer to a question someone was already asking."
+      </blockquote>
+      <p class="text-white/50">— Sarah Chen, Co-founder</p>
+    </div>
+  </section>
+
+  <!-- Featured Case Study -->
+  <section class="py-24 lg:py-32 bg-cream-100">
     <div class="max-w-7xl mx-auto px-6 lg:px-8">
       <div class="max-w-2xl mb-16 fade-in">
-        <p class="text-ember-500 text-sm font-medium tracking-widest uppercase mb-4">Case Studies</p>
-        <h2 class="font-display text-3xl md:text-4xl text-navy-900 leading-tight">
-          Results from recent work.
-        </h2>
+        <p class="text-ember-500 text-sm font-medium tracking-widest uppercase mb-4">Featured Work</p>
+        <h2 class="font-display text-3xl md:text-4xl text-navy-900 leading-tight">How we helped CloudSync triple organic traffic.</h2>
       </div>
-      <div class="space-y-12">
-        <!-- Case Study 1 -->
-        <div class="group fade-in">
-          <div class="bg-white border border-gray-200 overflow-hidden hover:shadow-lg transition-shadow duration-300">
-            <div class="grid lg:grid-cols-2">
-              <div class="bg-navy-800 aspect-[4/3] lg:aspect-auto flex items-center justify-center">
-                <div class="text-center p-8">
-                  <p class="text-white/30 text-sm tracking-widest uppercase">Case Study</p>
-                  <p class="font-display text-3xl text-white/60 mt-2">B2B SaaS</p>
-                </div>
-              </div>
-              <div class="p-8 lg:p-12 flex flex-col justify-center">
-                <p class="text-ember-500 text-sm font-medium mb-2">Organic Search</p>
-                <h3 class="font-display text-2xl text-navy-900 mb-4">How we helped CloudSync triple organic traffic in 6 months</h3>
-                <p class="text-stone-550 leading-relaxed mb-6">
-                  CloudSync was stuck at 15K monthly visitors. We restructured their content strategy, rebuilt technical SEO, and targeted high-intent keywords they'd been ignoring.
-                </p>
-                <div class="grid grid-cols-3 gap-6 pt-6 border-t border-gray-100">
-                  <div>
-                    <p class="font-display text-2xl text-navy-900">312%</p>
-                    <p class="text-xs text-stone-550 mt-1">Organic traffic</p>
-                  </div>
-                  <div>
-                    <p class="font-display text-2xl text-navy-900">47%</p>
-                    <p class="text-xs text-stone-550 mt-1">Lead increase</p>
-                  </div>
-                  <div>
-                    <p class="font-display text-2xl text-navy-900">$2.4M</p>
-                    <p class="text-xs text-stone-550 mt-1">Pipeline influenced</p>
-                  </div>
-                </div>
-              </div>
+      <div class="fade-in-scale">
+        <div class="bg-white border border-gray-200 overflow-hidden">
+          <div class="grid lg:grid-cols-2">
+            <div class="img-zoom overflow-hidden">
+              <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=800&q=80" alt="Marketing analytics dashboard" class="w-full h-full object-cover aspect-[4/3] lg:aspect-auto">
             </div>
-          </div>
-        </div>
-        <!-- Case Study 2 -->
-        <div class="group fade-in">
-          <div class="bg-white border border-gray-200 overflow-hidden hover:shadow-lg transition-shadow duration-300">
-            <div class="grid lg:grid-cols-2">
-              <div class="p-8 lg:p-12 flex flex-col justify-center order-2 lg:order-1">
-                <p class="text-ember-500 text-sm font-medium mb-2">Paid Media</p>
-                <h3 class="font-display text-2xl text-navy-900 mb-4">Reducing customer acquisition cost by 62% for Greenline Health</h3>
-                <p class="text-stone-550 leading-relaxed mb-6">
-                  Greenline was burning through $80K/month on Meta with a CPA of $120. We rebuilt their creative strategy, implemented proper conversion tracking, and restructured their account.
-                </p>
-                <div class="grid grid-cols-3 gap-6 pt-6 border-t border-gray-100">
-                  <div>
-                    <p class="font-display text-2xl text-navy-900">-62%</p>
-                    <p class="text-xs text-stone-550 mt-1">CPA reduction</p>
-                  </div>
-                  <div>
-                    <p class="font-display text-2xl text-navy-900">4.8x</p>
-                    <p class="text-xs text-stone-550 mt-1">ROAS</p>
-                  </div>
-                  <div>
-                    <p class="font-display text-2xl text-navy-900">18K</p>
-                    <p class="text-xs text-stone-550 mt-1">New customers</p>
-                  </div>
-                </div>
+            <div class="p-8 lg:p-12 flex flex-col justify-center">
+              <p class="text-ember-500 text-sm font-medium mb-2">Organic Search</p>
+              <h3 class="font-display text-2xl text-navy-900 mb-4">CloudSync — B2B SaaS</h3>
+              <p class="text-stone-550 leading-relaxed mb-6">CloudSync was stuck at 15K monthly visitors. We restructured their content strategy, rebuilt technical SEO, and targeted high-intent keywords they'd been ignoring.</p>
+              <div class="grid grid-cols-3 gap-6 pt-6 border-t border-gray-100">
+                <div><p class="font-display text-2xl text-navy-900">312%</p><p class="text-xs text-stone-550 mt-1">Organic traffic</p></div>
+                <div><p class="font-display text-2xl text-navy-900">47%</p><p class="text-xs text-stone-550 mt-1">Lead increase</p></div>
+                <div><p class="font-display text-2xl text-navy-900">$2.4M</p><p class="text-xs text-stone-550 mt-1">Pipeline influenced</p></div>
               </div>
-              <div class="bg-navy-800 aspect-[4/3] lg:aspect-auto flex items-center justify-center order-1 lg:order-2">
-                <div class="text-center p-8">
-                  <p class="text-white/30 text-sm tracking-widest uppercase">Case Study</p>
-                  <p class="font-display text-3xl text-white/60 mt-2">Health & Wellness</p>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-        <!-- Case Study 3 -->
-        <div class="group fade-in">
-          <div class="bg-white border border-gray-200 overflow-hidden hover:shadow-lg transition-shadow duration-300">
-            <div class="grid lg:grid-cols-2">
-              <div class="bg-navy-800 aspect-[4/3] lg:aspect-auto flex items-center justify-center">
-                <div class="text-center p-8">
-                  <p class="text-white/30 text-sm tracking-widest uppercase">Case Study</p>
-                  <p class="font-display text-3xl text-white/60 mt-2">E-commerce</p>
-                </div>
-              </div>
-              <div class="p-8 lg:p-12 flex flex-col justify-center">
-                <p class="text-ember-500 text-sm font-medium mb-2">Email + Content</p>
-                <h3 class="font-display text-2xl text-navy-900 mb-4">Building a $1.2M email program for Oak & Iron Goods</h3>
-                <p class="text-stone-550 leading-relaxed mb-6">
-                  Oak & Iron had a 20K subscriber list doing almost nothing. We built automated welcome flows, segmented campaigns, and a content strategy that turned their list into a revenue engine.
-                </p>
-                <div class="grid grid-cols-3 gap-6 pt-6 border-t border-gray-100">
-                  <div>
-                    <p class="font-display text-2xl text-navy-900">$1.2M</p>
-                    <p class="text-xs text-stone-550 mt-1">Email revenue</p>
-                  </div>
-                  <div>
-                    <p class="font-display text-2xl text-navy-900">38%</p>
-                    <p class="text-xs text-stone-550 mt-1">Open rate</p>
-                  </div>
-                  <div>
-                    <p class="font-display text-2xl text-navy-900">5.2x</p>
-                    <p class="text-xs text-stone-550 mt-1">Email ROI</p>
-                  </div>
-                </div>
-              </div>
+              <a href="portfolio.html" class="mt-8 text-ember-500 font-medium hover:text-ember-600 transition-colors inline-flex items-center gap-2 cursor-pointer">Read full case study <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M17.25 8.25L21 12m0 0l-3.75 3.75M2.25 12h18"/></svg></a>
             </div>
           </div>
         </div>
@@ -408,216 +210,65 @@
     </div>
   </section>
 
-  <!-- About -->
-  <section id="about" class="py-24 lg:py-32 bg-white">
+  <!-- Client logos -->
+  <section class="py-16 bg-white border-y border-gray-100">
     <div class="max-w-7xl mx-auto px-6 lg:px-8">
-      <div class="grid lg:grid-cols-2 gap-16 items-center">
-        <div class="fade-in">
-          <p class="text-ember-500 text-sm font-medium tracking-widest uppercase mb-4">About Us</p>
-          <h2 class="font-display text-3xl md:text-4xl text-navy-900 leading-tight mb-8">
-            A small team that punches above its weight.
-          </h2>
-          <div class="space-y-6 text-stone-550 leading-relaxed">
-            <p>
-              Meridian was founded in 2018 by a team that got tired of watching agencies deliver beautiful presentations with zero impact on revenue. We built this agency on a simple principle: <strong class="text-navy-900">every dollar we manage should earn its keep.</strong>
-            </p>
-            <p>
-              We're 12 people — strategists, writers, analysts, and media buyers — and we work with about 25 clients at any given time. That's intentional. We don't scale by diluting our attention.
-            </p>
-            <p>
-              Our clients tend to be companies doing $1M-$50M in revenue who've worked with agencies before and know exactly what they don't want.
-            </p>
-          </div>
-        </div>
-        <div class="fade-in">
-          <div class="bg-navy-900 aspect-square p-12 flex flex-col justify-center">
-            <blockquote class="font-display text-2xl md:text-3xl text-white/80 leading-snug italic">
-              "The best marketing doesn't feel like marketing. It feels like the answer to a question someone was already asking."
-            </blockquote>
-            <p class="text-white/40 mt-6 text-sm">— Sarah Chen, Co-founder</p>
-          </div>
-        </div>
+      <p class="text-center text-stone-550 text-sm mb-10 fade-in">Trusted by companies building the future</p>
+      <div class="flex flex-wrap items-center justify-center gap-x-12 gap-y-8 fade-in">
+        <span class="font-display text-2xl text-navy-900/20">CloudSync</span>
+        <span class="font-display text-2xl text-navy-900/20">Greenline</span>
+        <span class="font-display text-2xl text-navy-900/20">Oak & Iron</span>
+        <span class="font-display text-2xl text-navy-900/20">Veridian</span>
+        <span class="font-display text-2xl text-navy-900/20">Northpeak</span>
+        <span class="font-display text-2xl text-navy-900/20">Luminary</span>
       </div>
     </div>
   </section>
 
   <!-- Testimonials -->
-  <section id="testimonials" class="py-24 lg:py-32 bg-cream-100">
+  <section class="py-24 lg:py-32 bg-cream-50">
     <div class="max-w-7xl mx-auto px-6 lg:px-8">
       <div class="max-w-2xl mx-auto text-center mb-16 fade-in">
         <p class="text-ember-500 text-sm font-medium tracking-widest uppercase mb-4">Testimonials</p>
-        <h2 class="font-display text-3xl md:text-4xl text-navy-900 leading-tight">
-          What our clients say.
-        </h2>
+        <h2 class="font-display text-3xl md:text-4xl text-navy-900 leading-tight">What our clients say.</h2>
       </div>
-      <div class="grid md:grid-cols-3 gap-8">
-        <div class="testimonial-card bg-white p-8 border border-gray-200 transition-all duration-300 fade-in">
-          <div class="flex gap-1 mb-6">
-            <svg class="w-4 h-4 text-amber-400" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
-            <svg class="w-4 h-4 text-amber-400" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
-            <svg class="w-4 h-4 text-amber-400" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
-            <svg class="w-4 h-4 text-amber-400" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
-            <svg class="w-4 h-4 text-amber-400" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
-          </div>
-          <p class="text-stone-550 leading-relaxed text-sm mb-8">
-            "Meridian is the first agency I've worked with that actually made me money instead of just making me feel busy. Our pipeline grew 3x in the first quarter."
-          </p>
+      <div class="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+        <div class="testimonial-card bg-white p-8 border border-gray-200 transition-all duration-300 fade-in-left">
+          <svg class="w-8 h-8 text-ember-500/20 mb-4" fill="currentColor" viewBox="0 0 24 24"><path d="M14.017 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10h-9.983zm-14.017 0v-7.391c0-5.704 3.748-9.57 9-10.609l.996 2.151c-2.433.917-3.996 3.638-3.996 5.849h3.983v10h-9.983z"/></svg>
+          <p class="text-stone-550 leading-relaxed mb-8">"Meridian is the first agency I've worked with that actually made me money instead of just making me feel busy. Our pipeline grew 3x in the first quarter."</p>
           <div class="flex items-center gap-3">
             <div class="w-10 h-10 bg-navy-800 rounded-full flex items-center justify-center text-white font-medium text-sm">JM</div>
-            <div>
-              <p class="font-medium text-navy-900 text-sm">James Mitchell</p>
-              <p class="text-stone-550 text-xs">VP Marketing, CloudSync</p>
-            </div>
+            <div><p class="font-medium text-navy-900 text-sm">James Mitchell</p><p class="text-stone-550 text-xs">VP Marketing, CloudSync</p></div>
           </div>
         </div>
-        <div class="testimonial-card bg-white p-8 border border-gray-200 transition-all duration-300 fade-in">
-          <div class="flex gap-1 mb-6">
-            <svg class="w-4 h-4 text-amber-400" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
-            <svg class="w-4 h-4 text-amber-400" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
-            <svg class="w-4 h-4 text-amber-400" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
-            <svg class="w-4 h-4 text-amber-400" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
-            <svg class="w-4 h-4 text-amber-400" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
-          </div>
-          <p class="text-stone-550 leading-relaxed text-sm mb-8">
-            "They cut our cost per acquisition in half within two months. No excuses, no long onboarding. They just got to work and delivered."
-          </p>
+        <div class="testimonial-card bg-white p-8 border border-gray-200 transition-all duration-300 fade-in-right">
+          <svg class="w-8 h-8 text-ember-500/20 mb-4" fill="currentColor" viewBox="0 0 24 24"><path d="M14.017 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10h-9.983zm-14.017 0v-7.391c0-5.704 3.748-9.57 9-10.609l.996 2.151c-2.433.917-3.996 3.638-3.996 5.849h3.983v10h-9.983z"/></svg>
+          <p class="text-stone-550 leading-relaxed mb-8">"They cut our cost per acquisition in half within two months. No excuses, no long onboarding. They just got to work and delivered."</p>
           <div class="flex items-center gap-3">
             <div class="w-10 h-10 bg-navy-800 rounded-full flex items-center justify-center text-white font-medium text-sm">RP</div>
-            <div>
-              <p class="font-medium text-navy-900 text-sm">Rachel Park</p>
-              <p class="text-stone-550 text-xs">CEO, Greenline Health</p>
-            </div>
-          </div>
-        </div>
-        <div class="testimonial-card bg-white p-8 border border-gray-200 transition-all duration-300 fade-in">
-          <div class="flex gap-1 mb-6">
-            <svg class="w-4 h-4 text-amber-400" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
-            <svg class="w-4 h-4 text-amber-400" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
-            <svg class="w-4 h-4 text-amber-400" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
-            <svg class="w-4 h-4 text-amber-400" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
-            <svg class="w-4 h-4 text-amber-400" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
-          </div>
-          <p class="text-stone-550 leading-relaxed text-sm mb-8">
-            "Our email program went from an afterthought to our #1 revenue channel. The team at Meridian understood our brand and our customers better than anyone we've worked with."
-          </p>
-          <div class="flex items-center gap-3">
-            <div class="w-10 h-10 bg-navy-800 rounded-full flex items-center justify-center text-white font-medium text-sm">DW</div>
-            <div>
-              <p class="font-medium text-navy-900 text-sm">David Walsh</p>
-              <p class="text-stone-550 text-xs">Founder, Oak & Iron Goods</p>
-            </div>
+            <div><p class="font-medium text-navy-900 text-sm">Rachel Park</p><p class="text-stone-550 text-xs">CEO, Greenline Health</p></div>
           </div>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- Process -->
-  <section class="py-24 lg:py-32 bg-navy-900">
+  <!-- Newsletter CTA -->
+  <section class="py-24 lg:py-32 bg-white">
     <div class="max-w-7xl mx-auto px-6 lg:px-8">
-      <div class="max-w-2xl mb-16 fade-in">
-        <p class="text-ember-500 text-sm font-medium tracking-widest uppercase mb-4">Our Process</p>
-        <h2 class="font-display text-3xl md:text-4xl text-white leading-tight">
-          How we work.
-        </h2>
-      </div>
-      <div class="grid md:grid-cols-4 gap-8">
-        <div class="fade-in">
-          <p class="font-display text-5xl text-white/10 mb-4">01</p>
-          <h3 class="font-display text-xl text-white mb-3">Discovery</h3>
-          <p class="text-white/50 text-sm leading-relaxed">
-            We audit your current setup, interview your team, and understand your market. No templates — real investigation.
-          </p>
-        </div>
-        <div class="fade-in">
-          <p class="font-display text-5xl text-white/10 mb-4">02</p>
-          <h3 class="font-display text-xl text-white mb-3">Strategy</h3>
-          <p class="text-white/50 text-sm leading-relaxed">
-            We build a plan tied to your business goals, not vanity metrics. You'll see exactly what we'll do and why.
-          </p>
-        </div>
-        <div class="fade-in">
-          <p class="font-display text-5xl text-white/10 mb-4">03</p>
-          <h3 class="font-display text-xl text-white mb-3">Execute</h3>
-          <p class="text-white/50 text-sm leading-relaxed">
-            We launch, iterate, and optimize. You get weekly updates — no 60-slide monthly reports that nobody reads.
-          </p>
-        </div>
-        <div class="fade-in">
-          <p class="font-display text-5xl text-white/10 mb-4">04</p>
-          <h3 class="font-display text-xl text-white mb-3">Scale</h3>
-          <p class="text-white/50 text-sm leading-relaxed">
-            Once something works, we double down. We find the next channel, the next angle, the next growth lever.
-          </p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- CTA / Contact -->
-  <section id="contact" class="py-24 lg:py-32 bg-cream-50">
-    <div class="max-w-7xl mx-auto px-6 lg:px-8">
-      <div class="grid lg:grid-cols-2 gap-16">
-        <div class="fade-in">
-          <p class="text-ember-500 text-sm font-medium tracking-widest uppercase mb-4">Get Started</p>
-          <h2 class="font-display text-3xl md:text-4xl text-navy-900 leading-tight mb-6">
-            Let's talk about your growth.
-          </h2>
-          <p class="text-stone-550 leading-relaxed mb-8">
-            Tell us about your business and what you're looking to achieve. We'll respond within 24 hours with an honest assessment — even if we're not the right fit.
-          </p>
-          <div class="space-y-4">
-            <div class="flex items-center gap-4">
-              <svg class="w-5 h-5 text-ember-500 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5"><path stroke-linecap="round" stroke-linejoin="round" d="M21.75 6.75v10.5a2.25 2.25 0 01-2.25 2.25h-15a2.25 2.25 0 01-2.25-2.25V6.75m19.5 0A2.25 2.25 0 0019.5 4.5h-15a2.25 2.25 0 00-2.25 2.25m19.5 0v.243a2.25 2.25 0 01-1.07 1.916l-7.5 4.615a2.25 2.25 0 01-2.36 0L3.32 8.91a2.25 2.25 0 01-1.07-1.916V6.75"/></svg>
-              <a href="mailto:hello@meridiandigital.com" class="text-navy-900 hover:text-ember-500 transition-colors cursor-pointer">hello@meridiandigital.com</a>
-            </div>
-            <div class="flex items-center gap-4">
-              <svg class="w-5 h-5 text-ember-500 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5"><path stroke-linecap="round" stroke-linejoin="round" d="M2.25 6.75c0 8.284 6.716 15 15 15h2.25a2.25 2.25 0 002.25-2.25v-1.372c0-.516-.351-.966-.852-1.091l-4.423-1.106c-.44-.11-.902.055-1.173.417l-.97 1.293c-.282.376-.769.542-1.21.38a12.035 12.035 0 01-7.143-7.143c-.162-.441.004-.928.38-1.21l1.293-.97c.363-.271.527-.734.417-1.173L6.963 3.102a1.125 1.125 0 00-1.091-.852H4.5A2.25 2.25 0 002.25 4.5v2.25z"/></svg>
-              <span class="text-navy-900">+1 (555) 234-5678</span>
-            </div>
-            <div class="flex items-center gap-4">
-              <svg class="w-5 h-5 text-ember-500 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5"><path stroke-linecap="round" stroke-linejoin="round" d="M15 10.5a3 3 0 11-6 0 3 3 0 016 0z"/><path stroke-linecap="round" stroke-linejoin="round" d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1115 0z"/></svg>
-              <span class="text-navy-900">San Francisco, CA</span>
-            </div>
+      <div class="grid lg:grid-cols-2 gap-16 items-center">
+        <div class="fade-in-left">
+          <div class="img-zoom overflow-hidden rounded-sm">
+            <img src="https://images.unsplash.com/photo-1531482615713-2afd69097998?auto=format&fit=crop&w=800&q=80" alt="Team brainstorming session" class="w-full h-full object-cover aspect-[4/3]">
           </div>
         </div>
-        <div class="fade-in">
-          <form class="space-y-6" onsubmit="event.preventDefault(); alert('Thanks! We\'ll be in touch within 24 hours.');">
-            <div class="grid sm:grid-cols-2 gap-6">
-              <div>
-                <label for="first-name" class="block text-sm font-medium text-navy-900 mb-2">First Name</label>
-                <input type="text" id="first-name" name="first-name" required class="w-full px-4 py-3 border border-gray-300 bg-white text-navy-900 focus:border-ember-500 focus:ring-1 focus:ring-ember-500 outline-none transition-colors" placeholder="John">
-              </div>
-              <div>
-                <label for="last-name" class="block text-sm font-medium text-navy-900 mb-2">Last Name</label>
-                <input type="text" id="last-name" name="last-name" required class="w-full px-4 py-3 border border-gray-300 bg-white text-navy-900 focus:border-ember-500 focus:ring-1 focus:ring-ember-500 outline-none transition-colors" placeholder="Doe">
-              </div>
-            </div>
-            <div>
-              <label for="email" class="block text-sm font-medium text-navy-900 mb-2">Work Email</label>
-              <input type="email" id="email" name="email" required class="w-full px-4 py-3 border border-gray-300 bg-white text-navy-900 focus:border-ember-500 focus:ring-1 focus:ring-ember-500 outline-none transition-colors" placeholder="john@company.com">
-            </div>
-            <div>
-              <label for="company" class="block text-sm font-medium text-navy-900 mb-2">Company</label>
-              <input type="text" id="company" name="company" class="w-full px-4 py-3 border border-gray-300 bg-white text-navy-900 focus:border-ember-500 focus:ring-1 focus:ring-ember-500 outline-none transition-colors" placeholder="Your company">
-            </div>
-            <div>
-              <label for="budget" class="block text-sm font-medium text-navy-900 mb-2">Monthly Budget</label>
-              <select id="budget" name="budget" class="w-full px-4 py-3 border border-gray-300 bg-white text-navy-900 focus:border-ember-500 focus:ring-1 focus:ring-ember-500 outline-none transition-colors">
-                <option value="">Select a range</option>
-                <option value="5k-10k">$5,000 - $10,000</option>
-                <option value="10k-25k">$10,000 - $25,000</option>
-                <option value="25k-50k">$25,000 - $50,000</option>
-                <option value="50k+">$50,000+</option>
-              </select>
-            </div>
-            <div>
-              <label for="message" class="block text-sm font-medium text-navy-900 mb-2">Tell us about your goals</label>
-              <textarea id="message" name="message" rows="4" required class="w-full px-4 py-3 border border-gray-300 bg-white text-navy-900 focus:border-ember-500 focus:ring-1 focus:ring-ember-500 outline-none transition-colors resize-none" placeholder="What are you looking to achieve?"></textarea>
-            </div>
-            <button type="submit" class="w-full px-8 py-4 bg-ember-500 text-white font-medium hover:bg-ember-600 transition-colors duration-200 cursor-pointer">
-              Send Message
-            </button>
+        <div class="fade-in-right">
+          <p class="text-ember-500 text-sm font-medium tracking-widest uppercase mb-4">Stay Informed</p>
+          <h2 class="font-display text-3xl md:text-4xl text-navy-900 leading-tight mb-6">Get marketing insights, delivered weekly.</h2>
+          <p class="text-stone-550 leading-relaxed mb-8">Every Thursday we share one actionable insight from our work with clients. No fluff, no sales pitches — just something you can use.</p>
+          <form class="flex gap-3" onsubmit="event.preventDefault(); alert('Subscribed! Check your inbox.');">
+            <input type="email" placeholder="Your email" required class="flex-1 px-4 py-3 border border-gray-300 bg-white text-navy-900 focus:border-ember-500 focus:ring-1 focus:ring-ember-500 outline-none transition-colors">
+            <button type="submit" class="px-8 py-3 bg-navy-900 text-white font-medium hover:bg-navy-800 transition-colors cursor-pointer">Subscribe</button>
           </form>
         </div>
       </div>
@@ -627,65 +278,52 @@
   <!-- Footer -->
   <footer class="bg-navy-900 py-16 border-t border-white/5">
     <div class="max-w-7xl mx-auto px-6 lg:px-8">
-      <div class="grid md:grid-cols-4 gap-12 mb-16">
+      <div class="grid md:grid-cols-5 gap-12 mb-16">
         <div class="md:col-span-2">
-          <div class="flex items-center gap-3 mb-6">
-            <div class="w-8 h-8 bg-ember-500 rounded-sm"></div>
-            <span class="text-white font-display text-xl tracking-wide">Meridian</span>
-          </div>
-          <p class="text-white/40 max-w-sm leading-relaxed text-sm">
-            A digital marketing agency focused on measurable growth. Based in San Francisco, working with clients worldwide.
-          </p>
+          <div class="flex items-center gap-3 mb-6"><div class="w-8 h-8 bg-ember-500 rounded-sm"></div><span class="text-white font-display text-xl tracking-wide">Meridian</span></div>
+          <p class="text-white/40 max-w-sm leading-relaxed text-sm">A digital marketing agency focused on measurable growth. Based in San Francisco, working with clients worldwide.</p>
+        </div>
+        <div>
+          <h4 class="text-white font-medium text-sm mb-4">Pages</h4>
+          <ul class="space-y-3">
+            <li><a href="index.html" class="text-white/40 hover:text-white transition-colors text-sm cursor-pointer">Home</a></li>
+            <li><a href="about.html" class="text-white/40 hover:text-white transition-colors text-sm cursor-pointer">About</a></li>
+            <li><a href="services.html" class="text-white/40 hover:text-white transition-colors text-sm cursor-pointer">Services</a></li>
+            <li><a href="portfolio.html" class="text-white/40 hover:text-white transition-colors text-sm cursor-pointer">Work</a></li>
+          </ul>
         </div>
         <div>
           <h4 class="text-white font-medium text-sm mb-4">Services</h4>
           <ul class="space-y-3">
-            <li><a href="#services" class="text-white/40 hover:text-white transition-colors text-sm cursor-pointer">SEO</a></li>
-            <li><a href="#services" class="text-white/40 hover:text-white transition-colors text-sm cursor-pointer">Paid Media</a></li>
-            <li><a href="#services" class="text-white/40 hover:text-white transition-colors text-sm cursor-pointer">Content Strategy</a></li>
-            <li><a href="#services" class="text-white/40 hover:text-white transition-colors text-sm cursor-pointer">Social Media</a></li>
-            <li><a href="#services" class="text-white/40 hover:text-white transition-colors text-sm cursor-pointer">Email Marketing</a></li>
+            <li><a href="services.html#seo" class="text-white/40 hover:text-white transition-colors text-sm cursor-pointer">SEO</a></li>
+            <li><a href="services.html#paid-media" class="text-white/40 hover:text-white transition-colors text-sm cursor-pointer">Paid Media</a></li>
+            <li><a href="services.html#content" class="text-white/40 hover:text-white transition-colors text-sm cursor-pointer">Content</a></li>
+            <li><a href="services.html#email" class="text-white/40 hover:text-white transition-colors text-sm cursor-pointer">Email</a></li>
           </ul>
         </div>
         <div>
-          <h4 class="text-white font-medium text-sm mb-4">Company</h4>
+          <h4 class="text-white font-medium text-sm mb-4">More</h4>
           <ul class="space-y-3">
-            <li><a href="#about" class="text-white/40 hover:text-white transition-colors text-sm cursor-pointer">About</a></li>
-            <li><a href="#work" class="text-white/40 hover:text-white transition-colors text-sm cursor-pointer">Case Studies</a></li>
-            <li><a href="#testimonials" class="text-white/40 hover:text-white transition-colors text-sm cursor-pointer">Testimonials</a></li>
-            <li><a href="#contact" class="text-white/40 hover:text-white transition-colors text-sm cursor-pointer">Contact</a></li>
+            <li><a href="insights.html" class="text-white/40 hover:text-white transition-colors text-sm cursor-pointer">Insights</a></li>
+            <li><a href="contact.html" class="text-white/40 hover:text-white transition-colors text-sm cursor-pointer">Contact</a></li>
           </ul>
         </div>
       </div>
       <div class="pt-8 border-t border-white/10 flex flex-col sm:flex-row justify-between items-center gap-4">
         <p class="text-white/30 text-sm"> 2026 Meridian Digital. All rights reserved.</p>
         <div class="flex gap-6">
-          <a href="#" class="text-white/30 hover:text-white transition-colors cursor-pointer" aria-label="Twitter">
-            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
-          </a>
-          <a href="#" class="text-white/30 hover:text-white transition-colors cursor-pointer" aria-label="LinkedIn">
-            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
-          </a>
-          <a href="#" class="text-white/30 hover:text-white transition-colors cursor-pointer" aria-label="Instagram">
-            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
-          </a>
+          <a href="#" class="text-white/30 hover:text-white transition-colors cursor-pointer" aria-label="Twitter"><svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg></a>
+          <a href="#" class="text-white/30 hover:text-white transition-colors cursor-pointer" aria-label="LinkedIn"><svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg></a>
+          <a href="#" class="text-white/30 hover:text-white transition-colors cursor-pointer" aria-label="Instagram"><svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg></a>
         </div>
       </div>
     </div>
   </footer>
 
   <script>
-    // Navbar scroll behavior
     const navbar = document.getElementById('navbar');
-    window.addEventListener('scroll', () => {
-      if (window.scrollY > 50) {
-        navbar.classList.add('nav-scrolled');
-      } else {
-        navbar.classList.remove('nav-scrolled');
-      }
-    });
+    window.addEventListener('scroll', () => { window.scrollY > 50 ? navbar.classList.add('nav-scrolled') : navbar.classList.remove('nav-scrolled'); });
 
-    // Mobile menu
     const mobileToggle = document.getElementById('mobile-toggle');
     const mobileMenu = document.getElementById('mobile-menu');
     const mobileClose = document.getElementById('mobile-close');
@@ -693,44 +331,19 @@
     const iconOpen = document.getElementById('icon-open');
     const iconClose = document.getElementById('icon-close');
 
-    function openMenu() {
-      mobileMenu.classList.add('active');
-      document.body.classList.add('mobile-menu-open');
-      iconOpen.classList.add('hidden');
-      iconClose.classList.remove('hidden');
-    }
-
-    function closeMenu() {
-      mobileMenu.classList.remove('active');
-      document.body.classList.remove('mobile-menu-open');
-      iconOpen.classList.remove('hidden');
-      iconClose.classList.add('hidden');
-    }
+    function openMenu() { mobileMenu.classList.add('active'); document.body.classList.add('mobile-menu-open'); iconOpen.classList.add('hidden'); iconClose.classList.remove('hidden'); }
+    function closeMenu() { mobileMenu.classList.remove('active'); document.body.classList.remove('mobile-menu-open'); iconOpen.classList.remove('hidden'); iconClose.classList.add('hidden'); }
 
     mobileToggle.addEventListener('click', openMenu);
     mobileClose.addEventListener('click', closeMenu);
     mobileOverlay.addEventListener('click', closeMenu);
-    mobileMenu.querySelectorAll('a').forEach(link => {
-      link.addEventListener('click', closeMenu);
-    });
+    mobileMenu.querySelectorAll('a').forEach(link => link.addEventListener('click', closeMenu));
+    document.addEventListener('keydown', (e) => { if (e.key === 'Escape' && mobileMenu.classList.contains('active')) closeMenu(); });
 
-    // Close on Escape key
-    document.addEventListener('keydown', (e) => {
-      if (e.key === 'Escape' && mobileMenu.classList.contains('active')) {
-        closeMenu();
-      }
-    });
-
-    // Scroll reveal
     const observer = new IntersectionObserver((entries) => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add('visible');
-        }
-      });
+      entries.forEach(entry => { if (entry.isIntersecting) entry.target.classList.add('visible'); });
     }, { threshold: 0.1, rootMargin: '0px 0px -50px 0px' });
-
-    document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+    document.querySelectorAll('.fade-in, .fade-in-left, .fade-in-right, .fade-in-scale').forEach(el => observer.observe(el));
   </script>
 </body>
 </html>

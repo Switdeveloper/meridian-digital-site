@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>About Us | Meridian Digital</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            navy: { 900: '#0a1628', 800: '#0f1f3d', 700: '#152952', 600: '#1a3468' },
+            ember: { 500: '#e85d04', 600: '#d45003', 700: '#bf4403' },
+            cream: { 50: '#fefcf8', 100: '#fdf8ef', 200: '#f5ecd7' },
+            stone: { 550: '#6b6560' }
+          },
+          fontFamily: {
+            display: ['Playfair Display', 'Georgia', 'serif'],
+            body: ['Inter', 'system-ui', 'sans-serif'],
+          }
+        }
+      }
+    }
+  </script>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body class="font-body bg-cream-50 text-stone-550">
+  <!-- Navigation -->
+  <nav id="navbar" class="fixed top-0 left-0 w-full z-50 transition-all duration-300 bg-transparent">
+    <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex items-center justify-between h-16 md:h-20">
+        <a href="index.html" class="font-display text-2xl text-white">Meridian Digital</a>
+        <div class="hidden md:flex items-center space-x-8">
+          <a href="index.html" class="text-sm text-white/70 hover:text-white transition-colors">Home</a>
+          <a href="about.html" class="text-sm text-white font-medium hover:text-white transition-colors">About</a>
+          <a href="services.html" class="text-sm text-white/70 hover:text-white transition-colors">Services</a>
+          <a href="portfolio.html" class="text-sm text-white/70 hover:text-white transition-colors">Work</a>
+          <a href="insights.html" class="text-sm text-white/70 hover:text-white transition-colors">Insights</a>
+          <a href="contact.html" class="text-sm text-white/70 hover:text-white transition-colors">Contact</a>
+        </div>
+        <div class="md:hidden">
+          <button id="mobile-menu-btn" class="text-white focus:outline-none">
+            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+            </svg>
+          </button>
+        </div>
+      </div>
+    </div>
+    <div id="mobile-menu" class="hidden md:hidden bg-navy-900/95 backdrop-blur-sm">
+      <div class="container mx-auto px-4 py-4 space-y-4">
+        <a href="index.html" class="block text-sm text-white/70 hover:text-white transition-colors">Home</a>
+        <a href="about.html" class="block text-sm text-white font-medium hover:text-white transition-colors">About</a>
+        <a href="services.html" class="block text-sm text-white/70 hover:text-white transition-colors">Services</a>
+        <a href="portfolio.html" class="block text-sm text-white/70 hover:text-white transition-colors">Work</a>
+        <a href="insights.html" class="block text-sm text-white/70 hover:text-white transition-colors">Insights</a>
+        <a href="contact.html" class="block text-sm text-white/70 hover:text-white transition-colors">Contact</a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Page Hero -->
+  <section class="relative min-h-[50vh] bg-cover bg-center" style="background-image: url('https://images.unsplash.com/photo-1553028826-cc2807e5a831?auto=format&fit=crop&w=1920&q=80');">
+    <div class="absolute inset-0 bg-navy-900/80"></div>
+    <div class="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10 h-full flex items-center">
+      <div class="max-w-3xl fade-in">
+        <span class="text-sm font-body uppercase tracking-widest text-ember-500 mb-4 block">About Us</span>
+        <h1 class="font-display text-4xl md:text-5xl lg:text-6xl text-white leading-tight">Built on the belief that marketing should work.</h1>
+      </div>
+    </div>
+  </section>
+
+  <div class="section-divider"></div>
+
+  <!-- Our Story -->
+  <section class="py-16 md:py-24 bg-cream-50">
+    <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-12 md:gap-16 items-center">
+        <div class="fade-in-left">
+          <span class="text-sm font-body uppercase tracking-widest text-ember-500 mb-4 block">Our Story</span>
+          <h2 class="font-display text-3xl md:text-4xl text-navy-900 mb-6">From frustration to foundation</h2>
+          <p class="drop-cap font-body text-stone-550 leading-relaxed mb-4">Meridian Digital was founded in 2018 in a cramped Brooklyn coffee shop by two agency veterans who were done with the status quo. After years of watching brands pour budget into campaigns that looked good in pitch decks but delivered zero ROI, Sarah Jenkins and Mark Thompson decided there had to be a better way. They built Meridian on a simple premise: marketing should work, or it's not worth doing.</p>
+          <p class="font-body text-stone-550 leading-relaxed">What started as a two-person consultancy quickly grew as clients realized the difference between surface-level metrics and real business impact. Today, we're a team of 30+ strategists, creatives, and analysts united by the same belief that got us started: your marketing budget is an investment, not an expense.</p>
+        </div>
+        <div class="fade-in-right">
+          <div class="overflow-hidden rounded-lg shadow-xl">
+            <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&w=800&q=80" alt="Meridian Digital founding team" class="img-zoom w-full h-auto">
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="section-divider"></div>
+
+  <!-- Values -->
+  <section class="py-16 md:py-24 bg-white">
+    <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center mb-16 fade-in">
+        <span class="text-sm font-body uppercase tracking-widest text-ember-500 mb-4 block">Our Values</span>
+        <h2 class="font-display text-3xl md:text-4xl text-navy-900">What guides every decision we make</h2>
+      </div>
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+        <div class="text-center p-6 fade-in">
+          <div class="w-12 h-12 mx-auto mb-6 flex items-center justify-center bg-ember-500/10 rounded-full">
+            <svg class="w-6 h-6 text-ember-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6"></path>
+            </svg>
+          </div>
+          <h3 class="font-display text-xl text-navy-900 mb-3">Results Over Reports</h3>
+          <p class="font-body text-stone-550 text-sm">We optimize for revenue, leads, and growth — not vanity metrics or award entries.</p>
+        </div>
+        <div class="text-center p-6 fade-in">
+          <div class="w-12 h-12 mx-auto mb-6 flex items-center justify-center bg-ember-500/10 rounded-full">
+            <svg class="w-6 h-6 text-ember-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"></path>
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"></path>
+            </svg>
+          </div>
+          <h3 class="font-display text-xl text-navy-900 mb-3">Radical Transparency</h3>
+          <p class="font-body text-stone-550 text-sm">No hidden fees, no black-box strategies. You see exactly what we're doing and why.</p>
+        </div>
+        <div class="text-center p-6 fade-in">
+          <div class="w-12 h-12 mx-auto mb-6 flex items-center justify-center bg-ember-500/10 rounded-full">
+            <svg class="w-6 h-6 text-ember-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path>
+            </svg>
+          </div>
+          <h3 class="font-display text-xl text-navy-900 mb-3">Deep Over Wide</h3>
+          <p class="font-body text-stone-550 text-sm">We specialize in what we do best, rather than chasing every trend that comes along.</p>
+        </div>
+        <div class="text-center p-6 fade-in">
+          <div class="w-12 h-12 mx-auto mb-6 flex items-center justify-center bg-ember-500/10 rounded-full">
+            <svg class="w-6 h-6 text-ember-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 11.5V14m0-2.5v-6a1.5 1.5 0 113 0m-3 6a1.5 1.5 0 00-3 0v2a7.5 7.5 0 0015 0v-5a1.5 1.5 0 00-3 0m-6-3V11m0-5.5v-1a1.5 1.5 0 013 0v1m0 0V11m0-5.5a1.5 1.5 0 013 0v3m0 0V11"></path>
+            </svg>
+          </div>
+          <h3 class="font-display text-xl text-navy-900 mb-3">Earned Trust</h3>
+          <p class="font-body text-stone-550 text-sm">We don't want clients who sign contracts — we want partners who renew because we deliver.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="section-divider"></div>
+
+  <!-- Team -->
+  <section class="py-16 md:py-24 bg-cream-50">
+    <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center mb-16 fade-in">
+        <span class="text-sm font-body uppercase tracking-widest text-ember-500 mb-4 block">Our Team</span>
+        <h2 class="font-display text-3xl md:text-4xl text-navy-900">The minds behind the work</h2>
+      </div>
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div class="fade-in-scale text-center">
+          <div class="mb-4 overflow-hidden rounded-lg">
+            <img src="https://images.unsplash.com/photo-1580489944761-15a19d654956?auto=format&fit=crop&w=400&h=400&q=80" alt="Sarah Jenkins" class="aspect-square object-cover w-full">
+          </div>
+          <h3 class="font-display text-xl text-navy-900 mb-1">Sarah Jenkins</h3>
+          <p class="text-sm text-ember-500 font-medium mb-3">Co-Founder & CEO</p>
+          <p class="font-body text-stone-550 text-sm">Sarah leads strategy and client partnerships, with 15+ years in performance marketing.</p>
+        </div>
+        <div class="fade-in-scale text-center">
+          <div class="mb-4 overflow-hidden rounded-lg">
+            <img src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?auto=format&fit=crop&w=400&h=400&q=80" alt="Mark Thompson" class="aspect-square object-cover w-full">
+          </div>
+          <h3 class="font-display text-xl text-navy-900 mb-1">Mark Thompson</h3>
+          <p class="text-sm text-ember-500 font-medium mb-3">Co-Founder & COO</p>
+          <p class="font-body text-stone-550 text-sm">Mark oversees operations and analytics, ensuring every campaign meets ROI targets.</p>
+        </div>
+        <div class="fade-in-scale text-center">
+          <div class="mb-4 overflow-hidden rounded-lg">
+            <img src="https://images.unsplash.com/photo-1580489944761-15a19d654956?auto=format&fit=crop&w=400&h=400&q=80" alt="Aisha Patel" class="aspect-square object-cover w-full">
+          </div>
+          <h3 class="font-display text-xl text-navy-900 mb-1">Aisha Patel</h3>
+          <p class="text-sm text-ember-500 font-medium mb-3">Director of Strategy</p>
+          <p class="font-body text-stone-550 text-sm">Aisha crafts data-driven roadmaps for enterprise clients across retail and SaaS.</p>
+        </div>
+        <div class="fade-in-scale text-center">
+          <div class="mb-4 overflow-hidden rounded-lg">
+            <img src="https://images.unsplash.com/photo-1463453091185-61582044d556?auto=format&fit=crop&w=400&h=400&q=80" alt="James Lee" class="aspect-square object-cover w-full">
+          </div>
+          <h3 class="font-display text-xl text-navy-900 mb-1">James Lee</h3>
+          <p class="text-sm text-ember-500 font-medium mb-3">Creative Director</p>
+          <p class="font-body text-stone-550 text-sm">James leads our creative team, blending brand storytelling with conversion optimization.</p>
+        </div>
+        <div class="fade-in-scale text-center">
+          <div class="mb-4 overflow-hidden rounded-lg">
+            <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=400&h=400&q=80" alt="Maya Rodriguez" class="aspect-square object-cover w-full">
+          </div>
+          <h3 class="font-display text-xl text-navy-900 mb-1">Maya Rodriguez</h3>
+          <p class="text-sm text-ember-500 font-medium mb-3">Head of Paid Media</p>
+          <p class="font-body text-stone-550 text-sm">Maya manages $2M+ in ad spend monthly across Google, Meta, and LinkedIn.</p>
+        </div>
+        <div class="fade-in-scale text-center">
+          <div class="mb-4 overflow-hidden rounded-lg">
+            <img src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?auto=format&fit=crop&w=400&h=400&q=80" alt="David Kim" class="aspect-square object-cover w-full">
+          </div>
+          <h3 class="font-display text-xl text-navy-900 mb-1">David Kim</h3>
+          <p class="text-sm text-ember-500 font-medium mb-3">SEO Lead</p>
+          <p class="font-body text-stone-550 text-sm">David drives organic growth for clients through technical SEO and content strategy.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="section-divider"></div>
+
+  <!-- CTA -->
+  <section class="py-16 md:py-24 bg-navy-900">
+    <div class="container mx-auto px-4 sm:px-6 lg:px-8 text-center fade-in">
+      <h2 class="font-display text-3xl md:text-4xl text-white mb-6">Ready to work with us?</h2>
+      <p class="font-body text-cream-100/70 max-w-2xl mx-auto mb-8 text-lg">Let's build marketing that moves the needle for your business.</p>
+      <a href="contact.html" class="inline-block bg-ember-500 hover:bg-ember-600 text-white font-medium px-8 py-3 rounded-md transition-colors font-body">Get in Touch</a>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="bg-navy-800 text-cream-50 py-12">
+    <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+        <div>
+          <h3 class="font-display text-2xl mb-4">Meridian Digital</h3>
+          <p class="font-body text-cream-100/70 text-sm">Classic digital marketing, built for results.</p>
+        </div>
+        <div>
+          <h4 class="font-display text-lg mb-4">Navigation</h4>
+          <ul class="space-y-2">
+            <li><a href="index.html" class="text-sm text-cream-100/70 hover:text-white transition-colors">Home</a></li>
+            <li><a href="about.html" class="text-sm text-cream-100/70 hover:text-white transition-colors">About</a></li>
+            <li><a href="services.html" class="text-sm text-cream-100/70 hover:text-white transition-colors">Services</a></li>
+            <li><a href="portfolio.html" class="text-sm text-cream-100/70 hover:text-white transition-colors">Work</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4 class="font-display text-lg mb-4">Resources</h4>
+          <ul class="space-y-2">
+            <li><a href="insights.html" class="text-sm text-cream-100/70 hover:text-white transition-colors">Insights</a></li>
+            <li><a href="contact.html" class="text-sm text-cream-100/70 hover:text-white transition-colors">Contact</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4 class="font-display text-lg mb-4">Connect</h4>
+          <p class="font-body text-sm text-cream-100/70">hello@meridiandigital.com</p>
+          <p class="font-body text-sm text-cream-100/70 mt-2">123 Marketing Way, Suite 400<br>New York, NY 10001</p>
+        </div>
+      </div>
+      <div class="border-t border-cream-100/10 mt-8 pt-8 text-center">
+        <p class="font-body text-sm text-cream-100/50">&copy; 2026 Meridian Digital. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script>
+    // Navbar scroll behavior
+    window.addEventListener('scroll', function() {
+      const navbar = document.getElementById('navbar');
+      if (window.scrollY > 50) {
+        navbar.classList.add('bg-navy-900/95', 'backdrop-blur-sm', 'shadow-lg');
+        navbar.classList.remove('bg-transparent');
+      } else {
+        navbar.classList.remove('bg-navy-900/95', 'backdrop-blur-sm', 'shadow-lg');
+        navbar.classList.add('bg-transparent');
+      }
+    });
+
+    // Mobile menu toggle
+    const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+    const mobileMenu = document.getElementById('mobile-menu');
+    mobileMenuBtn.addEventListener('click', function() {
+      mobileMenu.classList.toggle('hidden');
+    });
+
+    // Scroll reveal
+    const scrollElements = document.querySelectorAll('.fade-in, .fade-in-left, .fade-in-right, .fade-in-scale');
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('revealed');
+        }
+      });
+    }, { threshold: 0.1 });
+
+    scrollElements.forEach(el => observer.observe(el));
+  </script>
+</body>
+</html>
